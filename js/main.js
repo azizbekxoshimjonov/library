@@ -26,8 +26,12 @@ fetch('https://65eaf57143ce16418932e936.mockapi.io/library')
             newLi.innerHTML = `
             <img src=${element.img} width="100px" alt="">
             <p>${element.price}</p>
-            <button onclick="DelCar(${element.id})">${element.title}</button>`
+            <button onclick="DelCar(${element.id})">${element.title}</button>
+            <button class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setId(${element.id})">Edit</button>
+            `
+
             elList.appendChild(newLi)
+            
 
             
         });
@@ -42,5 +46,25 @@ fetch('https://65eaf57143ce16418932e936.mockapi.io/library')
         })
         .then((res)=> res.json())
         .then((data) => console.log(data))
+    }
+    function setId(id){
+        window.localStorage.setItem('id', id)
+    }
 
+    function carEdit(e) {
+      let id =  window.localStorage.getItem('id')
+        e.preventDefault()
+        let boock = {
+            title: e.target.title.value,
+            img: e.target.img.value,
+            price: e.target.price.value,
+    
+        }
+        fetch(`https://65eaf57143ce16418932e936.mockapi.io/library/${id}`,{
+            method:'PUT',
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(boock)
+        })
+        .then((res)=>res.json())
+        .then((data)=>console.log(data))
     }

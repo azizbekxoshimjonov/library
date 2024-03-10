@@ -10,7 +10,7 @@ ul,ol{
 
 li{
     width: 100px;
-    height: 250px;
+    height: 300px;
     border: 1px solid black;
     margin-top: 25px;
     text-align: center;
@@ -20,7 +20,8 @@ li{
         background-color: red;
         color: white;
         border: none;
-        border-radius: 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
     }
 
 }
@@ -39,16 +40,16 @@ li{
     justify-content: space-around;
     margin: 0 auto;
     margin-top: 50px;
-    overflow: hidden;
     box-shadow: 2px 2px 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
 }
 input{
     width: 200px;
-    height: 20px;
+    height: 25px;
     padding-left: 10px;
     border-radius: 20px;
     border: 1px solid green;
+    margin-top: 20px;
 }
 
 input:active{
@@ -61,4 +62,5 @@ input:active{
     background-color: green;
     color: white;
     border-radius: 20px;
+    text-align: center;
 }
